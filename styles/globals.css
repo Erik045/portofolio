@@ -1,0 +1,82 @@
+/* styles/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 👁‍🗨 Base Styles */
+html,
+body {
+  @apply min-h-screen;
+  scroll-behavior: smooth;
+  background-color: #0a0f1c;
+}
+
+/* 🌀 Custom Noise Background */
+.bg-noise {
+  background-image: url("/noise.svg"); /* Add noise texture SVG (recommended) */
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+/* 🔗 Link Styles */
+a {
+  @apply transition-colors duration-300 ease-in-out;
+}
+
+/* ✨ Typography Enhancements */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold tracking-tight text-white drop-shadow;
+}
+
+/* 🌈 Gradient Text (Reusable Utility) */
+.gradient-text {
+  @apply bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent;
+}
+
+/* 🌀 Button Animations */
+.btn-glow {
+  @apply relative inline-flex items-center justify-center px-6 py-3 rounded-xl text-white font-semibold transition-all duration-300;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+}
+.btn-glow:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 30px rgba(14, 165, 233, 0.5);
+}
+
+/* 🧩 Floating Elements Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* 🎬 Fade-in Section */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🎨 Scrollbar (Optional, Clean Style) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#38bdf8, #0ea5e9);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
